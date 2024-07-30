@@ -13,7 +13,13 @@ export default class CartManager {
   static localStorageKey = "cartItems";
 
   constructor() {
-    const localStorageSavedItems = JSON.parse(localStorage.getItem(CartManager.localStorageKey)) || [];
+    let localStorageSavedItems;
+    try {
+      localStorageSavedItems = JSON.parse(localStorage.getItem(CartManager.localStorageKey)) || [];
+    } catch (error) {
+      localStorageSavedItems = [];
+      console.error('Error parsing JSON from localStorage:', error);
+    }
     this.cartItems = localStorageSavedItems.map((item) => CartItem.formToCartItemInstance(item));
     this.#handleToggleCart();
     this.#addProductToCart();
@@ -39,7 +45,7 @@ export default class CartManager {
         </div>
       `);    
     } else {
-     const allCartItem =this.cartItems.map((item) => item.renderElement()).join("");
+     const allCartItem = this.cartItems.map((item) => item.renderElement()).join("");
       const totalAmount = this.#calculateTotal();
       cartContent.html(`
         ${allCartItem}
@@ -55,7 +61,7 @@ export default class CartManager {
   #addProductToCart = () => {
     itemsElement.on("click", (event) => {
       if ($(event.target).attr("data-product")) {
-        const { id, title, image, price, stock, quantity } = JSON.parse($(event.target).attr("data-product"));
+        const { id, title, image, price, stock, quantity } = JSON.parse($(event.target).attr('data-product'));
         const existingItem = this.cartItems.find((item) => item.id === id);
         if (existingItem) {
           existingItem.increase();
@@ -116,6 +122,7 @@ export default class CartManager {
       this.#handleRender();
     });
   };
+
   #calculateTotal = () => {
     return this.cartItems.reduce((total, item) => total + item.getTotal(), 0).toFixed(2);
   };

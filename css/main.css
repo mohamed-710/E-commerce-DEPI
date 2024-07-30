@@ -306,9 +306,12 @@ nav {
   transform: scale(1.05);
 }
 
-.product-img {
-  width: 100%;
+.img-fluid
+{
   height: auto;
+  width: 60%;
+  padding: 20px;
+
 }
 .back-button {
   display: inline-block;
