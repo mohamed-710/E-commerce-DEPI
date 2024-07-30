@@ -12,10 +12,10 @@ export const cartItems = $(".cart-item");
 export const cartContent = $(".cart-content");
 export const   numOfItems= $("#num_of_item");
 export const   closeSide= $("#closeSidebar");
-export const sidebar = $("#side-bar-categories"); 
+export const   openSide= $(".open-side");
+export const   sidebar= $("#side-bar-categories");
 
 
-export const shoppingBag = $("#shoppingBag"); // jQuery object for the shopping bag
 
 
 

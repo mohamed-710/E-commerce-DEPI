@@ -13,7 +13,7 @@
 <body>
   <!-- Navabar -->
   <nav>
-    <div class="d-flex justify-content-between align-items-center flex-column flex-md-row p-3  gap-1">
+    <div class="d-flex justify-content-between align-items-center  flex-md-row p-3  gap-1">
       <span class="brand">
         <i class="fa-solid fa-shop"></i>
         <a class="E-shop" href="#">E-shop</a>
@@ -44,20 +44,21 @@
       </div>
     </div>
 
-    <div id="main-content" class="d-none py-5 mt-3">
+    <div id="main-content" class="d-none py-5 mt-3 ">
 
       <aside id="side-bar-categories"
-        class="col-12 col-md-3 bg-white border shadow rounded-1 vh-100 position-fixed start-0 p-3">
-        <div class="d-flex justify-content-between">
-          <h3 class="mb-3">Categories</h3>
-          <button class="btn d-md-none" id="closeSidebar">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <ul id="categories" class="list-unstyled"></ul>
-      </aside>
+      class="col-12 col-md-3 bg-white border shadow rounded-1 vh-100 position-fixed start-0 py-3">
+      <div class="d-flex justify-content-between">
+        <h3 class="mb-3">Categories</h3>
+        <button class="btn d-md-none" id="closeSidebar">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <ul id="categories" class="list-unstyled"></ul>
+    </aside>
+    <button class="open-side d-md-none  m-0"><i class="fas fa-bag-shopping"></i></button>
 
-      <div class="col-12 col-md-9 offset-md-3 mt-3">
+      <div class="col-12 col-md-10 offset-md-3 mt-3 d-flex flex-wrap">
         <div class="row" id="items">
         </div>
       </div>

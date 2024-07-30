@@ -28,5 +28,4 @@ const productSuccessRender=function(data)
   }).join('')
 );
 }
-
 export default productSuccessRender;
