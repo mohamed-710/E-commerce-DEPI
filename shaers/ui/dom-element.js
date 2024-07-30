@@ -14,6 +14,7 @@ export const   numOfItems= $("#num_of_item");
 export const   closeSide= $("#closeSidebar");
 export const   openSide= $(".open-side");
 export const   sidebar= $("#side-bar-categories");
+export const  details=$("#product-details")
 
 
 
